@@ -59,3 +59,29 @@
 ```
 gcc -o memcpy_s.o -c -Iinclude -fstack-protector-strong -fPIC -Wall -D_FORTIFY_SOURCE=2 -O2 src/memcpy_s.c
 ```
+#### CMake构建方法
+```
+mkdir build && cd build
+cmake ..
+make
+```
+查看是否成功
+```
+[root@vbox build]# pwd
+/root/securec-master/build
+[root@vbox build]# ll
+total 68
+-rw-r--r--. 1 root root 12505 May 12 09:37 CMakeCache.txt
+drwxr-xr-x. 6 root root  4096 May 12 09:37 CMakeFiles
+-rw-r--r--. 1 root root  2078 May 12 09:37 cmake_install.cmake
+drwxr-xr-x. 2 root root  4096 May 12 09:37 lib
+-rw-r--r--. 1 root root 39094 May 12 09:37 Makefile
+[root@vbox build]# ls -al lib/
+total 464
+drwxr-xr-x. 2 root root   4096 May 12 09:37 .
+drwxr-xr-x. 4 root root   4096 May 12 09:37 ..
+-rw-r--r--. 1 root root 464734 May 12 09:37 libsecurec.a
+[root@vbox build]#
+
+```
+
